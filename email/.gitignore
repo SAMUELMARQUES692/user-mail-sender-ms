@@ -28,6 +28,7 @@ gradle.properties
 *.iml
 *.iws
 *.ipr
+.env
 
 ## Eclipse / STS
 .project

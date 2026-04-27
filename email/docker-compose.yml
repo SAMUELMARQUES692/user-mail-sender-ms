@@ -6,8 +6,8 @@ services:
     container_name: ms-email-db
     environment:
       POSTGRES_DB: ms_email_ms
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: ${DATABASE_USERNAME_EMAIL}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD_EMAIL}
     ports:
       - "5433:5432"
     volumes:

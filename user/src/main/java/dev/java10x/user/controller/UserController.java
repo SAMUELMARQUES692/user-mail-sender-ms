@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RequiredArgsConstructor
 @RestController
@@ -21,11 +22,15 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.saveAndSend(userDTO));
     }
 
-    /*@GetMapping
+    @GetMapping
     public ResponseEntity<List<UserDTO>> findAll() {
         return ResponseEntity.ok(service.findAll());
-    }*/
+    }
 
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteAll(@PathVariable UUID id) {
+       service.deleteUser(id);
+       return ResponseEntity.noContent().build();
+    }
 
 }

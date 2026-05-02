@@ -39,6 +39,7 @@ public class EmailService {
            emailModel.setStatusEmail(EmailStatus.FAILED);
            System.out.println("Erro ao enviar email: " + exception.getMessage());
        }
+
        emailRepository.save(emailModel);
    }
 }
